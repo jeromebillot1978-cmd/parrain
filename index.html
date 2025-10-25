@@ -1,0 +1,1567 @@
+<!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>💰 CashHub Pro</h4>
+                    <p>Votre guide complet pour gagner de l'argent en ligne en 2025. Cashback, paris sportifs, crypto, sondages rémunérés et bien plus !</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook" target="_blank">📘</a>
+                        <a href="#" title="Twitter" target="_blank">🐦</a>
+                        <a href="#" title="Instagram" target="_blank">📸</a>
+                        <a href="#" title="YouTube" target="_blank">📺</a>
+                        <a href="#" title="Telegram" target="_blank">✈️</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>🔥 Top Catégories</h4>
+                    <ul class="footer-links">
+                        <li><a href="#cashback">Cashback (iGraal, Poulpeo, Ebuyclub)</a></li>
+                        <li><a href="#paris">Paris Sportifs (PMU, Betclic, Winamax)</a></li>
+                        <li><a href="#crypto">Crypto Trading (Binance, Coinbase)</a></li>
+                        <li><a href="#sondages">Sondages Rémunérés</a></li>
+                        <li><a href="#trading">Trading Bourse (Boursorama)</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>📚 Ressources Utiles</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog & Actualités Gains</a></li>
+                        <li><a href="#">Guides Débutants Gratuits</a></li>
+                        <li><a href="#">Comparatifs Plateformes</a></li>
+                        <li><a href="#">FAQ Questions Fréquentes</a></li>
+                        <li><a href="#">Témoignages Utilisateurs</a></li>
+                        <li><a href="#">Contact & Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>💝 Soutenez-nous</h4>
+                    <p>Ce site est gratuit et le restera toujours. Si vous appréciez notre travail et souhaitez nous remercier, vous pouvez faire un petit don :</p>
+                    <a href="https://www.paypal.com/paypalme/planteaddict02" target="_blank" class="cta-button" style="display: inline-block; margin-top: 15px; padding: 12px 25px; font-size: 14px;">
+                        💝 Faire un Don PayPal
+                    </a>
+                    <p style="margin-top: 15px; font-size: 13px; opacity: 0.8;">Chaque don nous aide à maintenir et améliorer le site. Merci ! ❤️</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>ℹ️ Informations Légales</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">À propos de CashHub Pro</a></li>
+                        <li><a href="#">Conditions d'utilisation</a></li>
+                        <li><a href="#">Politique de confidentialité RGPD</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Programme d'affiliation</a></li>
+                        <li><a href="#">Divulgation des liens affiliés</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 CashHub Pro - Tous droits réservés. | Gagner argent en ligne cashback paris sportifs crypto sondages</p>
+                <p class="disclaimer">
+                    ⚠️ <strong>Avertissement Important :</strong> Le trading de crypto-monnaies, CFD et les paris sportifs comportent des risques importants de perte en capital. 
+                    N'investissez que ce que vous pouvez vous permettre de perdre. Les gains passés ne garantissent pas les performances futures. 
+                    Jouez de manière responsable. Les liens présents sur ce site sont des liens d'affiliation - nous pouvons recevoir une commission 
+                    si vous vous inscrivez via nos liens, sans frais supplémentaires pour vous. Cela nous aide à maintenir le site gratuit. 
+                    Les bonus et offres sont susceptibles de changer selon les plateformes. Vérifiez toujours les conditions sur le site officiel. 
+                    Réservé aux personnes majeures (18+). Certains services peuvent nécessiter une vérification KYC.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll avec offset pour header fixe
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const target = document.querySelector(targetId);
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer pour animations au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Animation des compteurs stats
+        function animateCounter(element, target, duration) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = formatNumber(target);
+                    clearInterval(timer);
+                } else {
+                    element.textContent = formatNumber(Math.floor(start));
+                }
+            }, 16);
+        }
+
+        function formatNumber(num) {
+            if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+            if (num >= 1000) return (num / 1000).toFixed(0) + 'K';
+            return num;
+        }
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const h3 = entry.target.querySelector('h3');
+                    const text = h3.textContent;
+                    
+                    if (text.includes('K')) {
+                        const num = parseInt(text) * 1000;
+                        animateCounter(h3, num, 2000);
+                    } else if (text.includes('M')) {
+                        const num = parseFloat(text) * 1000000;
+                        animateCounter(h3, num, 2000);
+                    }
+                    
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        document.querySelectorAll('.stat-item').forEach(stat => statsObserver.observe(stat));
+
+        // Effet parallax léger sur hero
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero && scrolled < 600) {
+                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+                hero.style.opacity = 1 - (scrolled / 600);
+            }
+        }, { passive: true });
+
+        // Tracking des clics sur boutons (pour vos analytics)
+        document.querySelectorAll('.platform-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const card = this.closest('.platform-card');
+                const platform = card.querySelector('h3').textContent;
+                const category = card.closest('.category-section').querySelector('.section-title').textContent;
+                
+                console.log('Click tracked:', {
+                    platform: platform,
+                    category: category,
+                    timestamp: new Date().toISOString()
+                });
+                
+                // Ici vous pouvez ajouter votre code de tracking analytics
+                // Exemple Google Analytics:
+                // gtag('event', 'click', {
+                //     'event_category': 'Affiliate Link',
+                //     'event_label': platform,
+                //     'value': category
+                // });
+            });
+        });
+
+        // Tracking du bouton donation
+        document.querySelectorAll('.donation-button').forEach(button => {
+            button.addEventListener('click', function() {
+                console.log('Donation button clicked');
+                // Ajoutez votre tracking analytics ici
+            });
+        });
+
+        // Animation hover sur cartes
+        document.querySelectorAll('.platform-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.borderColor = '#667eea';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.borderColor = 'transparent';
+            });
+        });
+
+        // SEO: Update meta description dynamiquement selon la section visible
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+                    const sectionTitle = entry.target.querySelector('.section-title');
+                    if (sectionTitle) {
+                        document.title = sectionTitle.textContent + ' | CashHub Pro 2025';
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.category-section').forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+        // Message de bienvenue en console pour développeurs curieux
+        console.log('%c💰 CashHub Pro - Site d\'affiliation', 'font-size: 20px; font-weight: bold; color: #667eea;');
+        console.log('%c🔧 Besoin de personnaliser ce site ? Remplacez tous les liens VOTRE-LIEN-AFFILIATION-ICI par vos vrais liens !', 'font-size: 14px; color: #666;');
+        console.log('%c💝 Soutenez-nous: https://www.paypal.com/paypalme/planteaddict02', 'font-size: 12px; color: #ffd700;');
+
+        // Protection basique contre le copier-coller du contenu (optionnel)
+        // Décommentez si vous voulez protéger votre contenu
+        /*
+        document.addEventListener('copy', function(e) {
+            const selection = window.getSelection().toString();
+            if (selection.length > 100) {
+                e.clipboardData.setData('text/plain', 
+                    selection + '\n\n📌 Source: CashHub Pro - ' + window.location.href
+                );
+                e.preventDefault();
+            }
+        });
+        */
+
+        // Détection de AdBlock (optionnel - pour message utilisateur)
+        function detectAdBlock() {
+            const adTest = document.createElement('div');
+            adTest.innerHTML = '&nbsp;';
+            adTest.className = 'adsbox';
+            document.body.appendChild(adTest);
+            
+            setTimeout(() => {
+                if (adTest.offsetHeight === 0) {
+                    console.log('AdBlock détecté - Les liens d\'affiliation peuvent être bloqués');
+                }
+                adTest.remove();
+            }, 100);
+        }
+        detectAdBlock();
+
+        // Performance: Lazy loading des images si vous en ajoutez
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                            imageObserver.unobserve(img);
+                        }
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Notification PWA (optionnel - pour version mobile)
+        if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
+            // Décommentez pour activer le PWA
+            // navigator.serviceWorker.register('/sw.js');
+        }
+
+        // Analytics page view (remplacez par votre code Google Analytics)
+        /*
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'VOTRE-GA4-ID');
+        */
+
+        // ============================================
+        // 🔗 INJECTION AUTOMATIQUE DES LIENS
+        // ============================================
+        // Ce code remplace automatiquement tous les liens avec ceux configurés en haut
+        document.addEventListener('DOMContentLoaded', function() {
+            // CASHBACK
+            document.querySelector('a[href*="igraal"]')?.setAttribute('href', LIENS.igraal);
+            document.querySelector('a[href*="poulpeo"]')?.setAttribute('href', LIENS.poulpeo);
+            document.querySelector('a[href*="ebuyclub"]')?.setAttribute('href', LIENS.ebuyclub);
+            document.querySelector('a[href*="shopmium"]')?.setAttribute('href', LIENS.shopmium);
+            document.querySelector('a[href*="widilo"]')?.setAttribute('href', LIENS.widilo);
+            document.querySelector('a[href*="lemoney"]')?.setAttribute('href', LIENS.lemoney);
+            document.querySelector('a[href*="lyoness"]')?.setAttribute('href', LIENS.lyoness);
+            document.querySelector('a[href*="couponner"]')?.setAttribute('href', LIENS.couponner);
+
+            // PARIS SPORTIFS - Cherche par ID unique
+            const buttons = document.querySelectorAll('.platform-button');
+            buttons.forEach(btn => {
+                const card = btn.closest('.platform-card');
+                const title = card?.querySelector('h3')?.textContent.toLowerCase().trim();
+                
+                if (title?.includes('betclic')) btn.href = LIENS.betclic;
+                else if (title?.includes('pmu')) btn.href = LIENS.pmu;
+                else if (title?.includes('winamax')) btn.href = LIENS.winamax;
+                else if (title?.includes('unibet')) btn.href = LIENS.unibet;
+                else if (title?.includes('parionssport')) btn.href = LIENS.parionssport;
+                else if (title?.includes('zebet')) btn.href = LIENS.zebet;
+                else if (title?.includes('bwin')) btn.href = LIENS.bwin;
+                else if (title?.includes('netbet')) btn.href = LIENS.netbet;
+                else if (title?.includes('vbet')) btn.href = LIENS.vbet;
+                else if (title?.includes('genybet')) btn.href = LIENS.genybet;
+                
+                // CRYPTO
+                else if (title?.includes('binance')) btn.href = LIENS.binance;
+                else if (title?.includes('crypto.com')) btn.href = LIENS.cryptocom;
+                else if (title?.includes('kraken')) btn.href = LIENS.kraken;
+                else if (title?.includes('coinbase')) btn.href = LIENS.coinbase;
+                
+                // SONDAGES
+                else if (title?.includes('swagbucks')) btn.href = LIENS.swagbucks;
+                else if (title?.includes('toluna')) btn.href = LIENS.toluna;
+                else if (title?.includes('lifepoints')) btn.href = LIENS.lifepoints;
+                else if (title?.includes('mingle')) btn.href = LIENS.mingle;
+                
+                // TRADING
+                else if (title?.includes('boursorama')) btn.href = LIENS.boursorama;
+                else if (title?.includes('etoro')) btn.href = LIENS.etoro;
+                else if (title?.includes('trade republic')) btn.href = LIENS.traderepublic;
+                else if (title?.includes('xtb')) btn.href = LIENS.xtb;
+            });
+
+            // DONATION PAYPAL
+            document.getElementById('donation-btn-fixed')?.setAttribute('href', LIENS.paypal_donation);
+            document.querySelector('.footer-section .cta-button[href*="paypal"]')?.setAttribute('href', LIENS.paypal_donation);
+
+            // RESEAUX SOCIAUX
+            const socialLinks = document.querySelectorAll('.social-links a');
+            if (socialLinks[0]) socialLinks[0].href = LIENS.facebook;
+            if (socialLinks[1]) socialLinks[1].href = LIENS.twitter;
+            if (socialLinks[2]) socialLinks[2].href = LIENS.instagram;
+            if (socialLinks[3]) socialLinks[3].href = LIENS.youtube;
+            if (socialLinks[4]) socialLinks[4].href = LIENS.telegram;
+
+            // Afficher message de confirmation dans la console
+            console.log('✅ Tous les liens d\'affiliation ont été chargés depuis la configuration !');
+            console.log('📝 Pour modifier les liens, éditez la section LIENS au début du code HTML');
+        });
+    </script>
+
+    <!-- Google Analytics - Remplacez VOTRE-GA4-ID par votre vrai ID -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=VOTRE-GA4-ID"></script>
+    -->
+
+    <!-- Schema.org markup pour SEO (optionnel mais recommandé) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "CashHub Pro",
+      "description": "Gagnez de l'argent en ligne avec les meilleurs sites de cashback, paris sportifs, crypto trading et sondages rémunérés",
+      "url": "https://votre-domaine.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://votre-domaine.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Optimization -->
+    <title>Gagner de l'Argent en Ligne 2025 | Cashback, Paris Sportifs, Trading, Sondages Rémunérés</title>
+    <meta name="description" content="Gagnez de l'argent facilement avec les meilleurs sites : cashback (iGraal, Poulpeo), paris sportifs (PMU, Betclic, Winamax), trading crypto, sondages rémunérés. Bonus exclusifs et codes promo 2025.">
+    <meta name="keywords" content="gagner argent en ligne, cashback france, igraal, poulpeo, ebuyclub, paris sportifs bonus, betclic, winamax, PMU, trading crypto, binance, sondages rémunérés, crypto monnaie, gagner bitcoin, revenus passifs, affiliation, bons plans, codes promo, bonus paris sportifs 2025">
+    <meta name="author" content="CashHub Pro">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gagner de l'Argent en Ligne - Toutes les Meilleures Opportunités 2025">
+    <meta property="og:description" content="Découvrez les meilleures plateformes pour gagner de l'argent : cashback, paris sportifs, trading, sondages. Bonus exclusifs !">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Donation Button - Fixed */
+        .donation-fixed {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .donation-button {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #333;
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+
+        .donation-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
+        }
+
+        .donation-icon {
+            font-size: 24px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 45px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Stats */
+        .stats {
+            background: white;
+            padding: 50px 0;
+            margin-top: -40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.1);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 42px;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        /* Category Section */
+        .category-section {
+            padding: 70px 0;
+            background: white;
+            margin-top: 40px;
+        }
+
+        .category-section:nth-child(even) {
+            background: #f8f9ff;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .category-icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 38px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .platform-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8f9ff 100%);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .platform-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+
+        .platform-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .platform-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .platform-card h3 {
+            font-size: 22px;
+            color: #333;
+            margin: 0;
+        }
+
+        .rating {
+            color: #ffd700;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        .platform-card p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .benefits {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .benefits li {
+            padding: 6px 0;
+            color: #555;
+            position: relative;
+            padding-left: 25px;
+            font-size: 14px;
+        }
+
+        .benefits li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .platform-button {
+            display: block;
+            text-align: center;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+
+        .platform-button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .bonus-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #333;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 10px;
+            box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .earning-tag {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a2e;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #667eea;
+            transform: scale(1.1);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .disclaimer {
+            font-size: 12px;
+            opacity: 0.6;
+            margin-top: 15px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 16px; }
+            .nav-links { display: none; }
+            .platform-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 28px; }
+            .donation-fixed { bottom: 20px; right: 20px; }
+            .donation-button { padding: 12px 20px; font-size: 14px; }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Instructions Box */
+        .instructions-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .instructions-box h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .instructions-box p {
+            color: #856404;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Donation Button Fixed -->
+    <div class="donation-fixed">
+        <a href="https://www.paypal.com/paypalme/planteaddict02" target="_blank" class="donation-button" title="Soutenez-nous avec un don">
+            <span class="donation-icon">💝</span>
+            <span>Faire un Don</span>
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">💰 CashHub Pro</div>
+                <ul class="nav-links">
+                    <li><a href="#cashback">Cashback</a></li>
+                    <li><a href="#paris">Paris Sportifs</a></li>
+                    <li><a href="#crypto">Crypto</a></li>
+                    <li><a href="#sondages">Sondages</a></li>
+                    <li><a href="#trading">Trading</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Gagnez de l'Argent en Ligne 💸</h1>
+            <p>Cashback iGraal, Paris Sportifs PMU & Betclic, Trading Crypto, Sondages Rémunérés - Tous les Bonus 2025 !</p>
+            <a href="#cashback" class="cta-button">Découvrir les Bonus</a>
+            
+            <div class="trust-badges">
+                <div class="badge"><span>🔒</span><span>100% Sécurisé</span></div>
+                <div class="badge"><span>✓</span><span>Sites Vérifiés</span></div>
+                <div class="badge"><span>🎁</span><span>Bonus Exclusifs</span></div>
+                <div class="badge"><span>⚡</span><span>Gains Rapides</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="container">
+        <section class="stats">
+            <div class="stats-grid">
+                <div class="stat-item"><h3>100K+</h3><p>Membres actifs</p></div>
+                <div class="stat-item"><h3>€5M+</h3><p>Gains cumulés</p></div>
+                <div class="stat-item"><h3>80+</h3><p>Plateformes</p></div>
+                <div class="stat-item"><h3>4.9/5</h3><p>Satisfaction</p></div>
+            </div>
+        </section>
+
+        <!-- Instructions -->
+        <div class="instructions-box">
+            <h3>⚠️ IMPORTANT - Pour activer vos liens d'affiliation :</h3>
+            <p>Ce site utilise des liens placeholders (#). Vous devez les remplacer par VOS propres liens d'affiliation de chaque plateforme. Cherchez tous les <code>href="https://VOTRE-LIEN-AFFILIATION-ICI"</code> et remplacez-les par vos vrais liens de parrainage.</p>
+        </div>
+    </div>
+
+    <!-- CASHBACK SECTION -->
+    <section class="category-section" id="cashback">
+        <div class="container">
+            <div class="section-header">
+                <div class="category-icon">💳</div>
+                <h2 class="section-title">Cashback - Récupérez de l'Argent sur Vos Achats</h2>
+                <p class="section-subtitle">Les meilleurs sites cashback France : iGraal, Poulpeo, Ebuyclub et plus encore</p>
+            </div>
+            
+            <div class="platform-grid">
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">🛍️</div>
+                        <div><h3>iGraal</h3><div class="rating">★★★★★ 4.9/5</div></div>
+                    </div>
+                    <p><strong>N°1 du cashback en France depuis 2006</strong></p>
+                    <ul class="benefits">
+                        <li>Jusqu'à 40% de cashback</li>
+                        <li>1800+ marchands (Amazon, Cdiscount, Fnac)</li>
+                        <li>Extension navigateur gratuite</li>
+                        <li>Paiement dès 20€ par virement</li>
+                        <li>Code promo cumulables</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 3€ offerts + parrainage 10€</span>
+                    <span class="earning-tag">💰 100-400€/an</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">Installer Couponner →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARIS SPORTIFS SECTION -->
+    <section class="category-section" id="paris">
+        <div class="container">
+            <div class="section-header">
+                <div class="category-icon">⚽</div>
+                <h2 class="section-title">Paris Sportifs - Meilleurs Bonus 2025</h2>
+                <p class="section-subtitle">PMU, Betclic, Winamax, Unibet : Tous les bonus de bienvenue et codes promo paris sportifs</p>
+            </div>
+            
+            <div class="platform-grid">
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">🏆</div>
+                        <div><h3>Betclic</h3><div class="rating">★★★★★ 4.9/5</div></div>
+                    </div>
+                    <p><strong>Leader français des paris sportifs en ligne</strong></p>
+                    <ul class="benefits">
+                        <li>Cotes parmi les meilleures du marché</li>
+                        <li>Live streaming gratuit inclus</li>
+                        <li>30+ sports disponibles</li>
+                        <li>Application mobile parfaite</li>
+                        <li>Cash out automatique</li>
+                        <li>Licence ARJEL française</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 100€ offerts en paris gratuits</span>
+                    <span class="earning-tag">💰 Selon stratégie</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">Parier sur Betclic →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">🐴</div>
+                        <div><h3>PMU (Paris Hippiques)</h3><div class="rating">★★★★★ 4.8/5</div></div>
+                    </div>
+                    <p><strong>N°1 des paris hippiques en France</strong></p>
+                    <ul class="benefits">
+                        <li>Leader historique des courses hippiques</li>
+                        <li>Paris sportifs également disponibles</li>
+                        <li>Quinté+ et paris turf experts</li>
+                        <li>Points de vente physiques partout</li>
+                        <li>Pronostics et statistiques</li>
+                        <li>Application complète PMU Sport</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 150€ offerts + paris gratuits</span>
+                    <span class="earning-tag">💰 Gains variables</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">S'inscrire PMU →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">🔥</div>
+                        <div><h3>Winamax</h3><div class="rating">★★★★★ 4.9/5</div></div>
+                    </div>
+                    <p><strong>Paris sportifs + Poker en ligne</strong></p>
+                    <ul class="benefits">
+                        <li>Cotes très compétitives</li>
+                        <li>Live streaming HD gratuit</li>
+                        <li>Communauté française très active</li>
+                        <li>Promotions exclusives régulières</li>
+                        <li>Application ultra-rapide</li>
+                        <li>Poker online intégré</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 100€ de paris offerts</span>
+                    <span class="earning-tag">💰 Potentiel élevé</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">Rejoindre Winamax →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">🎲</div>
+                        <div><h3>Unibet</h3><div class="rating">★★★★★ 4.8/5</div></div>
+                    </div>
+                    <p><strong>Paris sportifs et casino en ligne</strong></p>
+                    <ul class="benefits">
+                        <li>Énorme choix de marchés</li>
+                        <li>Paris combinés boostés quotidiennement</li>
+                        <li>Interface ultra-intuitive</li>
+                        <li>Statistiques détaillées gratuites</li>
+                        <li>Promotions régulières généreuses</li>
+                        <li>Casino online intégré</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 100€ de bonus bienvenue</span>
+                    <span class="earning-tag">💰 Gains réguliers possibles</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">S'inscrire Unibet →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">⚡</div>
+                        <div><h3>ParionsSport (FDJ)</h3><div class="rating">★★★★☆ 4.7/5</div></div>
+                    </div>
+                    <p><strong>Paris sportifs de la Française des Jeux</strong></p>
+                    <ul class="benefits">
+                        <li>Marque de confiance FDJ</li>
+                        <li>Paris foot, tennis, basket, rugby...</li>
+                        <li>Points de vente physiques partout</li>
+                        <li>Live + paris anticipés</li>
+                        <li>Paiements 100% sécurisés</li>
+                        <li>Application mobile officielle</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 150€ offerts</span>
+                    <span class="earning-tag">💰 Fiable et régulier</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">Parier ParionsSport →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">🌟</div>
+                        <div><h3>ZEbet</h3><div class="rating">★★★★☆ 4.6/5</div></div>
+                    </div>
+                    <p><strong>Paris sportifs avec zéro commission</strong></p>
+                    <ul class="benefits">
+                        <li>0% de commission sur gains</li>
+                        <li>Cotes parmi les meilleures</li>
+                        <li>Paris en direct live</li>
+                        <li>Statistiques et analyses</li>
+                        <li>Bonus réguliers généreux</li>
+                        <li>Application mobile fluide</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 100€ offerts sans dépôt</span>
+                    <span class="earning-tag">💰 Cotes avantageuses</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">Rejoindre ZEbet →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">🎯</div>
+                        <div><h3>Bwin</h3><div class="rating">★★★★☆ 4.6/5</div></div>
+                    </div>
+                    <p><strong>Groupe international de référence</strong></p>
+                    <ul class="benefits">
+                        <li>Marque mondiale reconnue</li>
+                        <li>Paris sportifs + poker + casino</li>
+                        <li>Live streaming premium</li>
+                        <li>Cotes compétitives</li>
+                        <li>Programme VIP attractif</li>
+                        <li>Support client 24/7</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 120€ de bonus</span>
+                    <span class="earning-tag">💰 Multi-produits</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">Découvrir Bwin →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">💪</div>
+                        <div><h3>NetBet</h3><div class="rating">★★★★☆ 4.5/5</div></div>
+                    </div>
+                    <p><strong>Paris sportifs et casino français</strong></p>
+                    <ul class="benefits">
+                        <li>Large gamme de sports</li>
+                        <li>Casino et machines à sous</li>
+                        <li>Promotions hebdomadaires</li>
+                        <li>Paiements rapides</li>
+                        <li>Interface en français</li>
+                        <li>Service client réactif</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 100€ + 10€ gratuits</span>
+                    <span class="earning-tag">💰 Bonus réguliers</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">S'inscrire NetBet →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">🏅</div>
+                        <div><h3>Vbet</h3><div class="rating">★★★★☆ 4.5/5</div></div>
+                    </div>
+                    <p><strong>Paris sportifs esport inclus</strong></p>
+                    <ul class="benefits">
+                        <li>Sports traditionnels + esport</li>
+                        <li>Cotes attractives</li>
+                        <li>Streaming live gratuit</li>
+                        <li>Application mobile performante</li>
+                        <li>Bonus fidélité</li>
+                        <li>Paiements crypto acceptés</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 100€ de bonus sport</span>
+                    <span class="earning-tag">💰 Diversifié</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">Essayer Vbet →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">⚽</div>
+                        <div><h3>Genybet</h3><div class="rating">★★★★☆ 4.4/5</div></div>
+                    </div>
+                    <p><strong>Spécialiste turf et paris sportifs</strong></p>
+                    <ul class="benefits">
+                        <li>Expert courses hippiques</li>
+                        <li>Paris sportifs foot, tennis...</li>
+                        <li>Pronostics gratuits quotidiens</li>
+                        <li>Communauté de turfistes</li>
+                        <li>Statistiques détaillées</li>
+                        <li>Application Genybet mobile</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 50€ offerts</span>
+                    <span class="earning-tag">💰 Turf + sport</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">Rejoindre Genybet →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CRYPTO SECTION -->
+    <section class="category-section" id="crypto">
+        <div class="container">
+            <div class="section-header">
+                <div class="category-icon">₿</div>
+                <h2 class="section-title">Crypto Trading - Bitcoin, Ethereum & Altcoins</h2>
+                <p class="section-subtitle">Meilleurs exchanges crypto : Binance, Coinbase, Kraken avec bonus de bienvenue</p>
+            </div>
+            
+            <div class="platform-grid">
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">🔷</div>
+                        <div><h3>Binance</h3><div class="rating">★★★★★ 4.8/5</div></div>
+                    </div>
+                    <p><strong>Leader mondial des exchanges crypto</strong></p>
+                    <ul class="benefits">
+                        <li>350+ cryptomonnaies disponibles</li>
+                        <li>Frais ultra-compétitifs (0.1%)</li>
+                        <li>Staking jusqu'à 20% APY</li>
+                        <li>Trading spot, futures, options</li>
+                        <li>Carte Visa crypto avec cashback</li>
+                        <li>Application mobile complète</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 -20% frais à vie + 100 USDT</span>
+                    <span class="earning-tag">💰 Jusqu'à 500€/mois staking</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">S'inscrire Binance →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">💎</div>
+                        <div><h3>Crypto.com</h3><div class="rating">★★★★★ 4.7/5</div></div>
+                    </div>
+                    <p><strong>Carte Visa crypto avec cashback</strong></p>
+                    <ul class="benefits">
+                        <li>Jusqu'à 5% cashback sur achats</li>
+                        <li>250+ cryptos listées</li>
+                        <li>Staking avec APY attractifs</li>
+                        <li>Netflix/Spotify remboursés (selon carte)</li>
+                        <li>Application mobile primée</li>
+                        <li>DeFi wallet intégré</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 25$ offerts en CRO</span>
+                    <span class="earning-tag">💰 Cashback permanent</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">Rejoindre Crypto.com →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">🐙</div>
+                        <div><h3>Kraken</h3><div class="rating">★★★★☆ 4.6/5</div></div>
+                    </div>
+                    <p><strong>Exchange premium ultra-sécurisé</strong></p>
+                    <ul class="benefits">
+                        <li>Sécurité de niveau bancaire</li>
+                        <li>200+ cryptomonnaies</li>
+                        <li>Trading avancé et futures</li>
+                        <li>Staking et DeFi intégrés</li>
+                        <li>Support client réactif 24/7</li>
+                        <li>Réglementé USA & Europe</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 10$ offerts + frais réduits</span>
+                    <span class="earning-tag">💰 Trading pro</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">Découvrir Kraken →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">🦄</div>
+                        <div><h3>Coinbase</h3><div class="rating">★★★★☆ 4.5/5</div></div>
+                    </div>
+                    <p><strong>Plateforme idéale débutants crypto</strong></p>
+                    <ul class="benefits">
+                        <li>Interface ultra-intuitive</li>
+                        <li>Gagnez en apprenant (Coinbase Earn)</li>
+                        <li>Carte Coinbase avec rewards</li>
+                        <li>Staking simplifié</li>
+                        <li>Réglementée et cotée en bourse</li>
+                        <li>Assurance sur dépôts</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 10€ offerts + earn crypto</span>
+                    <span class="earning-tag">💰 Sécurité maximale</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">Essayer Coinbase →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SONDAGES SECTION -->
+    <section class="category-section" id="sondages">
+        <div class="container">
+            <div class="section-header">
+                <div class="category-icon">📋</div>
+                <h2 class="section-title">Sondages Rémunérés - Gagnez en Donnant Votre Avis</h2>
+                <p class="section-subtitle">Sites de sondages payants sérieux : Swagbucks, Toluna, LifePoints et plus</p>
+            </div>
+            
+            <div class="platform-grid">
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">💬</div>
+                        <div><h3>Swagbucks</h3><div class="rating">★★★★★ 4.8/5</div></div>
+                    </div>
+                    <p><strong>Leader mondial sondages rémunérés</strong></p>
+                    <ul class="benefits">
+                        <li>Sondages quotidiens disponibles</li>
+                        <li>0.50€ à 5€ par sondage</li>
+                        <li>Cashback achats en ligne intégré</li>
+                        <li>Vidéos et jeux rémunérés</li>
+                        <li>Paiement PayPal ou cartes cadeaux</li>
+                        <li>Application mobile disponible</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 5€ offerts à l'inscription</span>
+                    <span class="earning-tag">💰 50-200€/mois</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">Rejoindre Swagbucks →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">📝</div>
+                        <div><h3>Toluna</h3><div class="rating">★★★★★ 4.7/5</div></div>
+                    </div>
+                    <p><strong>Communauté 30 millions membres</strong></p>
+                    <ul class="benefits">
+                        <li>Nombreux sondages disponibles</li>
+                        <li>1€ à 3€ par sondage</li>
+                        <li>Tests produits gratuits à domicile</li>
+                        <li>Discussions et débats rémunérés</li>
+                        <li>Paiement dès 10€</li>
+                        <li>Bons d'achat variés</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 500 points offerts</span>
+                    <span class="earning-tag">💰 40-150€/mois</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">S'inscrire Toluna →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">🔍</div>
+                        <div><h3>LifePoints</h3><div class="rating">★★★★☆ 4.6/5</div></div>
+                    </div>
+                    <p><strong>Études de marché internationales</strong></p>
+                    <ul class="benefits">
+                        <li>Sondages de grandes marques</li>
+                        <li>Points échangeables facilement</li>
+                        <li>Nombreux partenaires e-commerce</li>
+                        <li>Interface claire et simple</li>
+                        <li>Paiement PayPal ou chèques cadeaux</li>
+                        <li>Mobile-friendly</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 Bonus premier sondage</span>
+                    <span class="earning-tag">💰 30-120€/mois</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">Découvrir LifePoints →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">🎤</div>
+                        <div><h3>Mingle</h3><div class="rating">★★★★☆ 4.5/5</div></div>
+                    </div>
+                    <p><strong>Sondages et tests utilisateurs</strong></p>
+                    <ul class="benefits">
+                        <li>Sondages rapides (5-10 min)</li>
+                        <li>Tests de sites web rémunérés</li>
+                        <li>Interviews vidéo bien payées</li>
+                        <li>Paiement rapide garanti</li>
+                        <li>Application mobile pratique</li>
+                        <li>Rémunération attractive</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 3€ de bienvenue</span>
+                    <span class="earning-tag">💰 25-100€/mois</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">Essayer Mingle →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRADING SECTION -->
+    <section class="category-section" id="trading">
+        <div class="container">
+            <div class="section-header">
+                <div class="category-icon">📈</div>
+                <h2 class="section-title">Trading Bourse - Actions, ETF, Indices</h2>
+                <p class="section-subtitle">Meilleurs courtiers en ligne : Boursorama, eToro, Trade Republic, XTB</p>
+            </div>
+            
+            <div class="platform-grid">
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">📊</div>
+                        <div><h3>Boursorama</h3><div class="rating">★★★★★ 4.9/5</div></div>
+                    </div>
+                    <p><strong>N°1 banque en ligne française</strong></p>
+                    <ul class="benefits">
+                        <li>Compte-titres et PEA gratuits</li>
+                        <li>Frais de courtage ultra-bas</li>
+                        <li>Tous les marchés européens et USA</li>
+                        <li>Analyses d'experts incluses</li>
+                        <li>Application mobile complète</li>
+                        <li>Service client élu n°1</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 80€ offerts + 80 ordres gratuits</span>
+                    <span class="earning-tag">💰 Investissements illimités</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">Ouvrir compte Boursorama →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">🌐</div>
+                        <div><h3>eToro</h3><div class="rating">★★★★★ 4.7/5</div></div>
+                    </div>
+                    <p><strong>Trading social et copy trading</strong></p>
+                    <ul class="benefits">
+                        <li>Copiez les meilleurs traders automatiquement</li>
+                        <li>Actions, crypto, ETF, indices, forex</li>
+                        <li>0% commission sur actions</li>
+                        <li>30M d'utilisateurs dans le monde</li>
+                        <li>Formation trading gratuite incluse</li>
+                        <li>Interface débutant-friendly</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 Compte démo $100K gratuit</span>
+                    <span class="earning-tag">💰 Copy trading rentable</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">Rejoindre eToro →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">🚀</div>
+                        <div><h3>Trade Republic</h3><div class="rating">★★★★☆ 4.6/5</div></div>
+                    </div>
+                    <p><strong>Trading sans commission mobile</strong></p>
+                    <ul class="benefits">
+                        <li>0€ de frais sur actions et ETF</li>
+                        <li>9000+ actions disponibles</li>
+                        <li>Plans d'épargne automatiques</li>
+                        <li>Interface ultra-simple et moderne</li>
+                        <li>Intérêts 3% sur liquidités</li>
+                        <li>Application mobile uniquement</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 Action gratuite offerte (jusqu'à 200€)</span>
+                    <span class="earning-tag">💰 Économies sur frais maximales</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">Essayer Trade Republic →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">🎯</div>
+                        <div><h3>XTB</h3><div class="rating">★★★★☆ 4.5/5</div></div>
+                    </div>
+                    <p><strong>CFD et trading avancé</strong></p>
+                    <ul class="benefits">
+                        <li>0% commission jusqu'à 100K€/mois</li>
+                        <li>Forex, indices, matières premières, crypto</li>
+                        <li>Plateforme xStation 5 puissante</li>
+                        <li>Formation trading complète gratuite</li>
+                        <li>Compte démo illimité</li>
+                        <li>Analyses quotidiennes d'experts</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 Formation offerte valeur 200€</span>
+                    <span class="earning-tag">💰 Trading professionnel</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">Découvrir XTB →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->S'inscrire sur iGraal →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">💰</div>
+                        <div><h3>Poulpeo</h3><div class="rating">★★★★★ 4.8/5</div></div>
+                    </div>
+                    <p><strong>Cashback généreux et paiements rapides</strong></p>
+                    <ul class="benefits">
+                        <li>Taux de cashback parmi les plus élevés</li>
+                        <li>1500+ boutiques partenaires</li>
+                        <li>Paiement ultra-rapide (7 jours)</li>
+                        <li>Bons de réduction exclusifs</li>
+                        <li>Application mobile complète</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 5€ offerts à l'inscription</span>
+                    <span class="earning-tag">💰 80-300€/an</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">Rejoindre Poulpeo →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">🎯</div>
+                        <div><h3>Ebuyclub</h3><div class="rating">★★★★★ 4.8/5</div></div>
+                    </div>
+                    <p><strong>Cashback + codes promo cumulés</strong></p>
+                    <ul class="benefits">
+                        <li>Double avantage cashback + promo</li>
+                        <li>2000+ marchands référencés</li>
+                        <li>Mode voyage (Booking, Hotels.com)</li>
+                        <li>Communauté active et conseils</li>
+                        <li>Paiement PayPal rapide</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 7€ de bienvenue</span>
+                    <span class="earning-tag">💰 70-250€/an</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">Essayer Ebuyclub →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">🏪</div>
+                        <div><h3>Shopmium</h3><div class="rating">★★★★★ 4.9/5</div></div>
+                    </div>
+                    <p><strong>Cashback sur courses en magasin</strong></p>
+                    <ul class="benefits">
+                        <li>Remboursement produits alimentaires</li>
+                        <li>Scanner ticket de caisse simple</li>
+                        <li>Offres 100% remboursées régulières</li>
+                        <li>Paiement instantané par virement</li>
+                        <li>Carrefour, Leclerc, Intermarché...</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 Produit gratuit offert</span>
+                    <span class="earning-tag">💰 50-180€/an</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">Télécharger Shopmium →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">🎁</div>
+                        <div><h3>Widilo</h3><div class="rating">★★★★☆ 4.7/5</div></div>
+                    </div>
+                    <p><strong>Nouveau cashback prometteur</strong></p>
+                    <ul class="benefits">
+                        <li>Cashback jusqu'à 30%</li>
+                        <li>1200+ boutiques en ligne</li>
+                        <li>Paiement dès 10€</li>
+                        <li>Interface moderne et rapide</li>
+                        <li>Programme parrainage attractif</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 5€ offerts</span>
+                    <span class="earning-tag">💰 60-200€/an</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">Découvrir Widilo →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">🍋</div>
+                        <div><h3>Lemoney</h3><div class="rating">★★★★☆ 4.6/5</div></div>
+                    </div>
+                    <p><strong>Cashback sur voyages et mode</strong></p>
+                    <ul class="benefits">
+                        <li>Spécialiste voyage et fashion</li>
+                        <li>Cashback Booking, Airbnb, Asos</li>
+                        <li>Application mobile pratique</li>
+                        <li>Paiement rapide garanti</li>
+                        <li>Offres flash régulières</li>
+                    </ul>
+                    <span class="bonus-badge">🎁 3€ de bienvenue</span>
+                    <span class="earning-tag">💰 40-150€/an</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">S'inscrire Lemoney →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">💎</div>
+                        <div><h3>Lyoness</h3><div class="rating">★★★★☆ 4.5/5</div></div>
+                    </div>
+                    <p><strong>Cashback en magasin et en ligne</strong></p>
+                    <ul class="benefits">
+                        <li>Carte cashback physique</li>
+                        <li>En magasin ET en ligne</li>
+                        <li>Grandes enseignes partenaires</li>
+                        <li>Accumulation de points</li>
+                        <li>International</li>
+                    </ul>
+                    <span class="earning-tag">💰 30-120€/an</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">Rejoindre Lyoness →</a>
+                </div>
+
+                <div class="platform-card fade-in">
+                    <div class="card-header">
+                        <div class="platform-icon">📱</div>
+                        <div><h3>Couponner</h3><div class="rating">★★★★☆ 4.4/5</div></div>
+                    </div>
+                    <p><strong>Extension cashback automatique</strong></p>
+                    <ul class="benefits">
+                        <li>Extension qui trouve le meilleur taux</li>
+                        <li>Cashback automatique activé</li>
+                        <li>Compare plusieurs sites cashback</li>
+                        <li>Codes promo appliqués auto</li>
+                        <li>Gratuit et sans inscription</li>
+                    </ul>
+                    <span class="earning-tag">💰 Optimise vos gains</span>
+                    <a href="https://VOTRE-LIEN-AFFILIATION-ICI" target="_blank" class="platform-button">
